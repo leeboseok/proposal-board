@@ -30,7 +30,7 @@
 	            Class.forName("com.mysql.cj.jdbc.Driver");
 	            conn=DriverManager.getConnection(url, db_id, db_pw);
 	
-	            String sql="UPDATE proposals SET title=?, ExecutiveSummary=?, ProjectBackground=?, SolutionsAndApproach=?, Financials=?, Conclusion=?, Documents=? WHERE num=?";
+	            String sql="UPDATE proposals SET title=?, summary=?, background=?, solution=?, financial=?, Conclusion=?, Documents=? WHERE num=?";
 	            pstmt=conn.prepareStatement(sql);
 	            pstmt.setString(1, title);
 	            pstmt.setString(2, es);
