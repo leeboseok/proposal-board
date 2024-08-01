@@ -10,9 +10,9 @@
 	<body>
 		<%
 			request.setCharacterEncoding("utf-8");
-			String del=request.getParameter("del");
+			String email=request.getParameter("email");
 			
-			String sql="delete from member where num="+del+";";
+			String sql="delete from member where email='"+email+"';";
 			
 			Connection conn=null;
 			Statement stmt=null;
