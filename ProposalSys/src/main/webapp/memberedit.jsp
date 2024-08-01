@@ -72,16 +72,6 @@
                 <span>
                     <select name="job">
                     	<option value="admin">Admin</option>
-                        <option value="Administrative">Administrative</option>
-                        <option value="Administrative Assistant">Administrative Assistant</option>
-                        <option value="Administrative-Other">Administrative-Other</option>
-                        <option value="Agile">Agile</option>
-                        <option value="Claims">Claims</option>
-                        <option value="Client Service">Client Service</option>
-                        <option value="Client Service-Account Manager">Client Service-Account Manager</option>
-                        <option value="Client Service - Other">Client Service - Other</option>
-                        <option value="Data Analytics">Data Analytics</option>
-                        <option value="Engineering">Engineering</option>
                         <option value="Engineering-Account Engineer">Engineering-Account Engineer</option>
                         <option value="Engineering-Engineering">Engineering-Engineering</option>
                         <option value="Engineering-Enterprise Service Delivery">Engineering-Enterprise Service Delivery</option>
@@ -90,36 +80,6 @@
                         <option value="Engineering-Quality Engineering/Audition">Engineering-Quality Engineering/Audition</option>
                         <option value="Engineering-Testing & Certification">Engineering-Testing and Certification</option>
                         <option value="Executive">Executive</option>
-                        <option value="Facilities/Ground Maintenance-Grounds/Maintenance">Facilities/Ground Maintenance-Grounds/Maintenance</option>
-                        <option value="Facilities/Ground Maintenance-Other">Facilities/Ground Maintenance-Other</option>
-                        <option value="Facilities/Ground Maintenance-Security">Facilities/Ground Maintenance-Security</option>
-                        <option value="Finance/Accounting - Accounting">Finance/Accounting - Accounting</option>
-                        <option value="Finance/Accounting - Audit">Finance/Accounting - Audit</option>
-                        <option value="Finance/Accounting - Other">Finance/Accounting - Other</option>
-                        <option value="Hospitality/Food/Lodging - Food Service">Hospitality/Food/Lodging - Food Service</option>
-                        <option value="Hospitality/Food/Lodging - Hotel Staff">Hospitality/Food/Lodging - Hotel Staff</option>
-                        <option value="Human Resources - Compensation/Benefits/Payroll">Human Resources - Compensation/Benefits/Payroll</option>
-                        <option value="Human Resources - Generalist">Human Resources - Generalist</option>
-                        <option value="Human Resources - Other">Human Resources - Other</option>
-                        <option value="Human Resources - Recruiting/Staffing">Human Resources - Recruiting/Staffing</option>
-                        <option value="Innovation">Innovation</option>
-                        <option value="Investments - Management">Investments - Management</option>
-                        <option value="Legal">Legal</option>
-                        <option value="Marketing/Media/Communications - Communications">Marketing/Media/Communications - Communications</option>
-                        <option value="Marketing/Media/Communications - Designer">Marketing/Media/Communications - Designer</option>
-                        <option value="Marketing/Media/Communications - Editor">Marketing/Media/Communications - Editor</option>
-                        <option value="Marketing/Media/Communications - Other">Marketing/Media/Communications - Other</option>
-                        <option value="Marketing/Media/Communications - public Relations">Marketing/Media/Communications - public Relations</option>
-                        <option value="Reserch/Approvals-Research Engineer">Research/Approvals-Research Engineer</option>
-                        <option value="Reserch/Approvals-Research Scientist">Research/Approvals-Research Scientist</option>
-                        <option value="Sales">Sales</option>
-                        <option value="Technology - Applications Developer">Technology - Applications Developer</option>
-                        <option value="Technology - Business Analyst">Technology - Business Analyst</option>
-                        <option value="Technology - Database Administrator">Technology - Database Administrator</option>
-                        <option value="Technology - Information Security">Technology - Information Security</option>
-                        <option value="Technology - Networking">Technology - Networking</option>
-                        <option value="Technology - Other">Technology - Other</option>
-                        <option value="Technology - Software Engineer">Technology - Software Engineer</option>
                     </select>
                 </span><br>
                 <span>Location</span>
@@ -309,7 +269,7 @@
 							<td><%=lo %></td>
 							<td>
 								<form method="post" action="deleteprogress.jsp">
-									<input type="hidden" value="<%=num %>" name="del">
+									<input type="hidden" value="<%=email %>" name="email">
 									<input type="submit" value="delete">
 								</form>
 							</td>
