@@ -1,0 +1,98 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="icon" href="./images/fmLogo.svg">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="header">
+				<div class="top">
+					<div class="left">
+						<a href="#">proposals</a>
+						<a href="#">proposals</a>
+						<a href="#">proposals</a>
+						<a href="#">proposals</a>
+						<a href="#">proposals</a>
+						<a href="#">proposals</a>
+					</div>
+					<div class="right">
+						<a href = "signin.jsp">Sign in</a>
+						<a href = "signup.jsp">Sign up</a>
+					</div>
+				</div>
+				<div class="bot"></div>
+			</div>
+			<div class="pan">
+				<div class = "A"></div>
+				<div class = "B"></div>
+				<div class = "C"></div>
+				<div class = "D"></div>
+				<div class = "E"></div>
+				<div class = "F"></div>
+			</div>
+			<div class="navi">
+				<div id="section1" class="selected"></div>
+				<div id="section1"></div>
+				<div id="section1"></div>
+				<div id="section1"></div>
+				<div id="section1"></div>
+				<div id="section1"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+	$(window).on("load", function(){
+	    let posY=0; //pan의 Y좌표값
+	    let isScroll=false;
+	    $(".pan").on("wheel",function(e){
+	        if(isScroll){
+	            return;
+	        }
+	        isScroll=true;
+	        //console.log(e.originalEvent.deltaY);
+	        //jQuery하고 js는 방식이 다르다.
+	        var delta=e.originalEvent.deltaY;   //휠의 방향
+	        if(delta>0){
+	            posY-=100;
+	        }else if(delta<0){
+	            posY+=100;
+	        }
+	        if(posY<-500){
+	            posY=-500;
+	        }
+	        if(posY>0){
+	            posY=0;
+	        }
+	        $(".pan").animate({"top":posY+"%"},{duration:1000, complete:function(){
+	            isScroll=false;
+	        }});
+	        let number = (posY-100)/-100;
+	        dotAni(number);
+	    });//마우스 휠에 반응해서 화면을 움직이는 기능
+
+	    $(".navi > div").click(function(){
+	        let data=$(this).attr("id");
+	        let number=data.charAt(data.length-1);
+	        posY=(number-1)*-100;
+	        isScroll=true;
+	        $(".pan").animate({"top":posY+"%"},{duration:1000, complete:function(){
+	            isScroll=false;
+	        }});
+	        dotAni(number);
+	    });//네비 클릭 시 해당 위치로 이동하는 기능
+
+	    function dotAni(number){
+	        $(".navi > div").removeClass();
+	        $(".navi > div:nth-child("+number+")").attr("class","selected");
+	        //다른요소에 있던 속성을 또다른 요소로 이전시키려면
+	        //가장 간단한 방법은 모두 지우고 옮길 요소에게 속성을 주면 된다.
+	    }//네비게이션 깜빡임 처리
+	});//이 아래로는 아무것도 적지 말것
+	</script>
+</html>

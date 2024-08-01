@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Insert title here</title>
+		<style>
+			#wrap{
+				width:800px;
+				margin:0 auto;
+				border:5px solid #450095;
+				text-align:center;
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+			}
+			#logo{
+            	margin: 20px auto;
+                width: 150px;
+                cursor: pointer;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			
+			<%
+				String email=(String)session.getAttribute("Email");	
+				System.out.println(email);
+				Connection conn=null;
+				Statement stmt=null;
+				ResultSet rs=null;
+			
+				String url="jdbc:mysql://127.0.0.1:3306/fm_global";
+				String db_id="root";
+				String db_pw="iotiot";
+				try{
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					conn=DriverManager.getConnection(url, db_id, db_pw);
+					String sql = "select * from member where email='" + email + "'";
+					stmt=conn.createStatement();
+					rs=stmt.executeQuery(sql);
+					System.out.println(sql);
+					if (rs.next()) {
+                        String firstName = rs.getString("fn");
+                        String lastName = rs.getString("ln");
+                        String photo = rs.getString("photo");
+                        String phone = rs.getString("phone");
+                        String job = rs.getString("job");
+                        String location = rs.getString("location");
+       				 %>
+                        <div class="member-info">
+                            <h2>회원 정보</h2>
+                            <p><strong>Name:</strong> <%= firstName %> <%= lastName %></p>
+                            <p><strong>Phone:</strong> <%= phone %></p>
+                            <p><strong>Position:</strong> <%= job %></p>
+                            <p><strong>Location:</strong> <%= location %></p>
+                            <%-- 사진이 있다면 출력 --%>
+                            <% if (photo != null && !photo.isEmpty()) { %>
+                                <img src="./ProposalSys/<%= photo %>" alt="회원 사진">
+                            <% } %>
+                        </div>
+                    <% } else { %>
+                        <p>해당 이메일로 회원 정보를 찾을 수 없습니다.</p>
+                    <% }
+				}catch(Exception e){
+					System.out.println("접속 중 오류 발생" + e);
+				}finally{
+					try{
+						if(rs!=null)rs.close();
+						if(stmt!=null)stmt.close();
+						if(conn!=null)conn.close();
+					}catch(Exception ex){
+						System.out.println("접속 해제 중 오류 발생"+ex);
+					}
+				}
+			%>
+		</div>
+	</body>
+</html>

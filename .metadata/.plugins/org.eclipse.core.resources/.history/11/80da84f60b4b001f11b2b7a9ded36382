@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+#wrap{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
+}
+
+.board{
+	position:relative;
+	top:0px;
+	height:600%;
+}
+
+.board > div{
+	width:100%;
+	height:16.6667%;
+}
+
+.A, .B, .C, .D, .E, .F{
+	width : 100%;
+	height : 100%;
+	background-size : cover;
+}
+
+.A{background-image: url('../images/fmbg1.jpg');}
+.B{background-image: url('../images/fmbg6.jpg');}
+.C{background-image: url('../images/fmbg3.jpg');}
+.D{background-image: url('../images/fmbg4.jpg');}
+.E{background-image: url('../images/fmbg5.jpg');}
+.F{background-image: url('../images/fmbg2.jpg');}

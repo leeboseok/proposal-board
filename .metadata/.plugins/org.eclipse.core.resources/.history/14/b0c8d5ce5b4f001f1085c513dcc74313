@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My Page</title>
+		<link rel="stylesheet" href="css/mypage.css">
+		<style>
+			#wrap{
+				margin:0 auto;
+				width:480px;
+			}
+            form > div{
+            	text-align:center;
+            	padding:30px;
+            	font-size: 20px;
+            	font-weight: 600;
+            	color:#7B2B63;
+            	cursor:pointer;
+            }
+            form > div:hover{
+            	background-color:#7B2B63;
+            	color:white;
+            }
+            h1{
+            	text-align:center;
+            	color:#ffbf3f;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>MYPAGE</h1>
+			<form id="myList" action="">
+				<div class="personalinfo.jsp">개인정보</div>
+				<div class="mycreations.jsp">내가 쓴 글 보기</div>
+				<div class="messages.jsp">쪽지함</div>
+				<div class="logoutprogress.jsp">로그아웃</div>
+			</form>
+		</div>
+		<script>
+			let frm=document.getElementById("myList");
+		    let btn=frm.getElementsByTagName("div");
+			for(let i=0; i<=btn.length; i++){
+				btn[i].addEventListener("click", function(){
+					frm.action=btn[i].getAttribute("class"); //i번째 getClass
+					frm.submit();
+				});
+			};
+		</script>
+	</body>
+</html>

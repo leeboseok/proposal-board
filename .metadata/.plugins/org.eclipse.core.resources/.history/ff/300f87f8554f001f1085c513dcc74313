@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    background-image: url('../images/hero-earth.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#wrap{
+	margin:0 auto;
+	width:480px;
+}
+form > div{
+	text-align:center;
+	padding:30px;
+	font-size: 20px;
+	font-weight: 600;
+	color:#7B2B63(0,14,51,0.7);
+	cursor:pointer;
+}
+form > div:hover{
+	background-color:#7B2B63;
+	color:white;
+}
+h1{
+	text-align:center;
+	color:#ffbf3f;
+}
