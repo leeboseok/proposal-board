@@ -20,14 +20,12 @@
 			String email = request.getParameter("email");
 			String phone = request.getParameter("phone");
 			String location = request.getParameter("location");
-			String title = request.getParameter("title");
-			String refer = request.getParameter("refer");
 			String category = request.getParameter("category");
 			
 			try{
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn=DriverManager.getConnection(url, db_id, db_pw);
-				String sql="insert into admin_contact (name, email, phone, location, title, refer, category) values (?, ?, ?, ?, ?, ?, ?)";
+				String sql="insert into admin_contact (name, email, phone, location, category) values (?, ?, ?, ?, ?)";
 				
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn=DriverManager.getConnection(url, db_id, db_pw);
@@ -36,9 +34,7 @@
 				pstmt.setString(2, email);
 				pstmt.setString(3, phone);
 				pstmt.setString(4, location);
-				pstmt.setString(5, title);
-				pstmt.setString(6, refer);
-				pstmt.setString(7, category);
+				pstmt.setString(6, category);
 				pstmt.executeUpdate();
 				response.sendRedirect("signin.jsp");
 			}catch(Exception e){
