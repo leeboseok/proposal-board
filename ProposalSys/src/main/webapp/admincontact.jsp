@@ -5,6 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>관리자 컨택</title>
+		<link rel="stylesheet" href="css/admincontact.css">
 		<style>
 		</style>
 	</head>
@@ -12,19 +13,19 @@
 		<div id="wrap">
 			<form class="form" method="get" action="admincontactprogress.jsp">
 				<div>
-					<span>Name:</span>
+					<span>Name</span>
 					<input type="text" name="name" placeholder="이름을 입력하세요" required>
 				</div>
 				<div>
-					<span>Email:</span>
+					<span>Email</span>
 					<input type="email" name="email" placeholder="이메일을 입력하세요" required>
 				</div>
 				<div>
-					<span>Phone:</span>
+					<span>Phone</span>
 					<input type="text" name="phone" placeholder="전화번호를 입력하세요">
 				</div>
 				<div>
-					<span>Location:</span>
+					<span>Location</span>
 					<select name="location">
                         <option value="United States - San Juan">United States - San Juan</option>
                         <option value="United States - California-Walnut Creek">United States - California-Walnut Creek</option>
@@ -155,21 +156,13 @@
                     </select>
 				</div>
 				<div>
-	                <span>문의 카테고리:</span>
+	                <span>Category</span>
 	                <select name="category" required>
 	                    <option value="I couldn't mind my email">I couldn't mind my email</option>
 	                    <option value="I forgot my password">I forgot my password</option>
 	                    <option value="other">Other</option>
 	                </select>
            		</div>
-				<div>
-					<span>제목:</span>
-					<input type="text" name="title" placeholder="제목을 입력하세요">
-				</div>
-				<div>
-					<span>문의사항:</span>
-					<textarea name="refer" placeholder="자세한 문의사항을 입력하세요" rows="4"></textarea> 
-				</div>
 				<div>
 					<input type="submit" value="Send">
 				</div>
