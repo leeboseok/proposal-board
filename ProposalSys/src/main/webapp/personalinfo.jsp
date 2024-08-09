@@ -41,11 +41,7 @@
                             <p><strong>Name:</strong> <%= firstName %> <%= lastName %></p>
                             <p><strong>Phone:</strong> <%= phone %></p>
                             <p><strong>Position:</strong> <%= job %></p>
-                            <p><strong>Location:</strong> <%= location %></p>
-                            <%-- 사진이 있다면 출력 --%>
-                            <% if (photo != null && !photo.isEmpty()) { %>
-                                <img src="<%= photo %>" alt="회원 사진">
-                            <% } %>
+                            <p><strong>Branch ocation:</strong> <%= location %></p>
                         </div>
                     <% } else { %>
                         <p>해당 이메일로 회원 정보를 찾을 수 없습니다.</p>

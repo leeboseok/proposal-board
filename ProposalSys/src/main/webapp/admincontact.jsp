@@ -11,6 +11,8 @@
 	</head>
 	<body>
 		<div id="wrap">
+			<h1>관리자에게 보낼 개인정보 입력</h1>
+			<p>관리자가 확인 후 입력하신 연락처로 연락드리겠습니다.</p>
 			<form class="form" method="get" action="admincontactprogress.jsp">
 				<div>
 					<span>Name</span>
@@ -18,14 +20,28 @@
 				</div>
 				<div>
 					<span>Email</span>
-					<input type="email" name="email" placeholder="이메일을 입력하세요" required>
+					<input type="email" name="email" placeholder="관리자에게 연락 받을 이메일을 입력하세요" required>
 				</div>
 				<div>
 					<span>Phone</span>
-					<input type="text" name="phone" placeholder="전화번호를 입력하세요">
+					<input type="text" name="phone" placeholder="관리자에게 연락 받을 전화번호를 입력하세요">
 				</div>
 				<div>
-					<span>Location</span>
+					<span>Job</span>
+                    <select name="job">
+                    	<option value="admin">Admin</option>
+                        <option value="Engineering-Account Engineer">Engineering-Account Engineer</option>
+                        <option value="Engineering-Engineering">Engineering-Engineering</option>
+                        <option value="Engineering-Enterprise Service Delivery">Engineering-Enterprise Service Delivery</option>
+                        <option value="Engineering-Field Engineer">Engineering-Field Engineer</option>
+                        <option value="Engineering-Other">Engineering-Other</option>
+                        <option value="Engineering-Quality Engineering/Audition">Engineering-Quality Engineering/Audition</option>
+                        <option value="Engineering-Testing & Certification">Engineering-Testing and Certification</option>
+                        <option value="Executive">Executive</option>
+                    </select>
+                </div>
+				<div>
+					<span>Branch location</span>
 					<select name="location">
                         <option value="United States - San Juan">United States - San Juan</option>
                         <option value="United States - California-Walnut Creek">United States - California-Walnut Creek</option>

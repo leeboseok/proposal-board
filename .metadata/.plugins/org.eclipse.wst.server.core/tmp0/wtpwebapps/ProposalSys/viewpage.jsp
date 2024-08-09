@@ -6,23 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Insert title here</title>
-		<style>
-			#container{
-				margin:0 auto;
-				width:700px;
-				border:3px solid #450095;
-			}
-			h1{
-				text-align:center;
-			}
-			.div_info{
-				margin:0 auto;
-				width:600px;
-				padding:20px;
-				text-align:center;
-				border:1px solid #450095;
-			}
-		</style>
+		<link rel="stylesheet" href="css/viewPage.css">
 	</head>
 	<body>
 		<%
@@ -45,15 +29,15 @@
 				
 				if(rs.next()){
 					String title=rs.getString("title");
-					String ex=rs.getString("summary");
-					String pro=rs.getString("background");
+					String sum=rs.getString("summary");
+					String bg=rs.getString("background");
 					String sol=rs.getString("solution");
 					String fin=rs.getString("financial");
 					String con=rs.getString("conclusion");
 					String doc=rs.getString("documents");
 					String email=rs.getString("email");
-					String fnm=rs.getString("fn");
-					String lnm=rs.getString("ln");
+					String fn=rs.getString("fn");
+					String ln=rs.getString("ln");
 					String ph=rs.getString("photo");
 					String phn=rs.getString("phone");
 					String j=rs.getString("job");
@@ -64,13 +48,14 @@
 							<h1><%=title%></h1>
 						</div>
 						<div class="div_info">
-							<p><%=fnm+" "+lnm%></p>
-							<p><%=j+" "+lo%></p>
-							<p><%=email+" "+phn%></p>
+							<p><%=fn+" "+ln%></p>
+							<p>Position : <%=j%></p>
+							<p>Location : <%=lo %>
+							<p>Email : <%=email+" | Phone : "+phn%></p>
 						</div>
 						<div>
-							<p><%=ex %></p>
-							<p><%=pro %></p>
+							<p><%=sum %></p>
+							<p><%=bg %></p>
 							<p><%=sol%></p>
 							<p><%=fin %></p>
 							<p><%=con %></p>

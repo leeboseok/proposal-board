@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 html, body {
-    height: 100%; /* Ensure the full height of the viewport is used */
-    margin: 0;    /* Remove default margin */
+    height: 100%;
+    margin: 0;
 }
 
 html {
@@ -14,19 +14,19 @@ html {
 
 body {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
+    justify-content: center;
+    align-items: center;
 }
 h1{
 	color:white;
 }
 #wrap {
-    width: 480px; /* Adjust width as needed */
-    padding: 20px; /* Optional: add padding inside the wrap */
-    background-color: rgba(0,14,51,0.7); /* Optional: background color for better visibility */
-    border-radius: 10px; /* Optional: rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: shadow for better visual appeal */
-    transform: translateY(-100px) /* Adjust this value to move the form upwards */
+    width: 480px;
+    padding: 20px;
+    background-color: rgba(0,14,51,0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-100px);
 }
 .idpw{
 	height:30px;

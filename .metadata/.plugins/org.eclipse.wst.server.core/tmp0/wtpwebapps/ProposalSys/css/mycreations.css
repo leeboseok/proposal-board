@@ -1,80 +1,66 @@
 @charset "UTF-8";
 
 html, body {
-    height: 100%; /* Ensure the full height of the viewport is used */
-    margin: 0;    /* Remove default margin */
+    height: 100%;
+    margin: 0;
 }
-
 html {
     background-image: url('../images/hero-earth.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 body {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    font-family: Arial, sans-serif; /* Set a default font */
-    color: #fff; /* Set a default text color */
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
 }
-
 h1 {
     color: white;
     text-align: center;
     margin-bottom: 20px;
 }
-
-/* Wrap */
 #wrap {
-    width: 480px; /* Adjust width as needed */
-    padding: 20px; /* Optional: add padding inside the wrap */
-    background-color: rgba(0, 14, 51, 0.7); /* Optional: background color for better visibility */
-    border-radius: 10px; /* Optional: rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: shadow for better visual appeal */
-    transform: translateY(-100px); /* Adjust this value to move the form upwards */
+    width: 480px;
+    padding: 20px;
+    background-color: rgba(0, 14, 51, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-100px);
 }
-
-/* List items */
 .list {
     padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Light border for separation */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-
 .list a {
     text-decoration: none;
-    color: #fff; /* Default link color */
+    color: #fff;
 }
-
 .list a:hover {
-    color: gray; /* Link color on hover */
+    color: gray;
 }
-
-/* Pagination */
 .pagination {
-    text-align: center; /* Center the pagination links */
+    text-align: center;
     margin-top: 20px;
 }
-
 .pagination a {
     text-decoration: none;
-    color: #fff; /* Default link color */
+    color: #fff;
     padding: 5px 10px;
     margin: 0 5px;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Border around pagination links */
-    border-radius: 5px; /* Rounded corners for pagination links */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
 }
-
 .pagination a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Background color on hover */
-    color: gray; /* Link color on hover */
+    background-color: rgba(255, 255, 255, 0.2);
+    color: gray;
 }
-
 .pagination strong {
-    color: #fff; /* Active page number color */
+    color: #fff;
     padding: 5px 10px;
     margin: 0 5px;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Border around active page number */
-    border-radius: 5px; /* Rounded corners for active page number */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
 }

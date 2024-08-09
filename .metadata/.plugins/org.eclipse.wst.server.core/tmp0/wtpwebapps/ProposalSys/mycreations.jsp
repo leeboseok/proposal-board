@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>나의 글 보기</title>
-		<link rel="stylesheet" href="css/mycreations.css"> 
+		<link rel="stylesheet" href="css/myCreations.css"> 
 	</head>
 	<body>
 		<div id="wrap">
@@ -30,6 +30,7 @@
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					conn=DriverManager.getConnection(url, db_id, db_pw);
 					
+				//페이지네이션 쿼리 입니다.
 					String countSql="select count(*) from proposals where author = "+author;
 					stmt=conn.createStatement();
 					rs=stmt.executeQuery(countSql);
@@ -41,6 +42,7 @@
 					stmt.close();
 					int totalPages=(int)Math.ceil((double)totalRecords/recordsPerPage);
 					
+				//글목록 리스트 쿼리 입니다.
 					String sql = "SELECT p.num, p.title, m.fn, m.ln, m.location, p.created_at FROM proposals p JOIN member m ON p.author = m.num WHERE p.author = " + author + " ORDER BY p.created_at DESC LIMIT " + start + ", " + recordsPerPage;
 					stmt=conn.createStatement();
 					rs=stmt.executeQuery(sql);
@@ -54,7 +56,7 @@
 						String createdAt=rs.getString("created_at");
 						%>
 							<div class="list">
-								<a href="progressmycreations.jsp?num=<%=num %>">
+								<a href="viewCreation.jsp?num=<%=num %>">
 									<%=title %><br>
 									<%=firstName+" "+lastName %><br>
 									<%=location %><br>

@@ -1,0 +1,41 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+html {
+    background-image: url('../images/hero-earth.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#wrap {
+    width: 480px;
+    padding: 20px;
+    background-color: rgba(0, 14, 51, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-100px);
+}
+.div_info {
+    margin-bottom: 20px;
+}
+.div_info p {
+    margin: 5px 0;
+}
+.div_info p:first-child {
+    font-weight: bold;
+}
+.container p {
+    margin: 5px 0;
+}

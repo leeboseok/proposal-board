@@ -1,0 +1,221 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<%
+			String title=(String)session.getAttribute("title");
+		%>
+		<title><%=title %></title>
+		<style>
+			#wrap{
+				width:800px;
+				margin:0 auto;
+				border:5px solid #450095;
+				text-align:center;
+			}
+			#wrap:after{
+				content: "";
+				display:block;
+				clear:both;
+			}
+			#btn1{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:#450095;
+				cursor:pointer;
+			}
+			#btn2{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:navy;
+				cursor:pointer;
+			}
+			#btn3{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:navy;
+				cursor:pointer;
+			}
+			#btn4{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:navy;
+				cursor:pointer;
+			}
+			#btn1:hover{
+				background-color:#64c4DD; /*하늘색*/
+				color:white;
+			}
+			#btn2:hover{
+				background-color:#ffbf3f; /*노란색*/
+				color:white;
+			}
+			#btn3:hover{
+				background-color:#450095; /*남색*/
+				color:white;
+			}
+			#btn4:hover{
+				background-color:#7B2B63;
+				color:white;
+			}
+			#logo{
+            	margin: 20px auto;
+                width: 150px;
+                cursor: pointer;
+            }
+            .list{
+            	width: 480px;
+            	height:60px;
+            	font-size:20px;
+            	fond-weight:bold;
+            	color:navy;
+            	padding:40px;
+            	cursor:pointer;
+            	float:left;
+            	clear:both;
+            }
+            .list:hover{
+            	background-color:#7B2B63;
+            	color:white;
+            }
+            ul{
+            	list-style:none;
+            }
+            a{
+            	color: inherit;
+            	cursor:pointer;
+            	text-decoration:none;
+            }
+            #menu{
+            	margin-top:20px;
+            	display:inline-block;
+            }
+            #menu div{
+            	display:inline-block;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div>
+				<form id="menu" method="post" action="">
+					<div data-action="create.jsp" id="btn1">create</div>
+					<div data-action="editproposal.jsp" id="btn2">edit</div>
+					<div data-action="progressmycreationsdelete.jsp" id="btn3">delete</div>
+					<div data-action="main.jsp" id="btn4">main</div>
+				</form>
+			</div>
+				<%
+				int num = Integer.parseInt(request.getParameter("num"));
+				session.setAttribute("selectedNum", num);
+				Connection conn=null;
+				Statement stmt=null;
+				ResultSet rs=null;
+				
+				String url="jdbc:mysql://127.0.0.1:3306/fm_global";
+				String db_id="root";
+				String db_pw="iotiot";
+				try{
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					conn=DriverManager.getConnection(url, db_id, db_pw);
+					String sql="select p.title, p.summary, p.background, p.solution, p.financial, p.conclusion, p.documents,";
+					sql+="m.email, m.fn, m.ln, m.photo, m.phone, m.job, m.location from proposals p join member m on p.author=m.num where p.num="+num;
+					System.out.println(sql);
+					stmt=conn.createStatement();
+					rs=stmt.executeQuery(sql);
+					if(rs.next()){
+						String title=rs.getString("title");
+						String ex=rs.getString("summary");
+						String pro=rs.getString("background");
+						String sol=rs.getString("solution");
+						String fin=rs.getString("financial");
+						String con=rs.getString("conclusion");
+						String doc=rs.getString("documents");
+						String email=rs.getString("email");
+						String fnm=rs.getString("fn");
+						String lnm=rs.getString("ln");
+						String ph=rs.getString("photo");
+						String phn=rs.getString("phone");
+						String j=rs.getString("job");
+						String lo=rs.getString("location");
+			%>
+						<div id="container">
+							<div>
+								<h1><%=title%></h1>
+							</div>
+							<div class="div_info">
+								<p><%=fnm+" "+lnm%></p>
+								<p><%=j+" "+lo%></p>
+								<p><%=email+" "+phn%></p>
+							</div>
+							<div>
+								<p><%=ex %></p>
+								<p><%=pro %></p>
+								<p><%=sol%></p>
+								<p><%=fin %></p>
+								<p><%=con %></p>
+								<p><%=doc %></p>
+							</div>
+						</div>
+						<%
+					}else{
+						%>
+							<h1>해당 글을 찾을 수 없습니다.</h1>
+						<%
+					}
+				}catch(Exception e){
+					System.out.println("접속 중 로류 발생");
+				}finally{
+					try{
+						if(rs!=null)rs.close();
+						if(stmt!=null)stmt.close();
+						if(conn!=null)conn.close();
+					}catch(Exception ex){
+						System.out.println("접속 해제 중 오류 발생: "+ ex);
+					}
+				}
+			%>
+		</div>
+		<script>
+			let menu = document.getElementById("menu");
+			let btn = menu.getElementsByTagName("div");
+	
+			for(let i = 0; i < btn.length; i++){
+			    btn[i].addEventListener("click", function(){
+			        let action = btn[i].getAttribute("data-action");
+			        if(action){
+			        	menu.action = action;
+			            menu.submit();
+			        }
+			    });
+			};
+		</script>
+	</body>
+</html>

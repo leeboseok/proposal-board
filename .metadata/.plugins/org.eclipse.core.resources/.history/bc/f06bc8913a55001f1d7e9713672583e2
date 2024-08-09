@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+#wrap{
+				width:800px;
+				margin:0 auto;
+				border:5px solid #450095;
+				text-align:center;
+			}
+			#wrap:after{
+				content: "";
+				display:block;
+				clear:both;
+			}
+			#btn1{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:#450095;
+				cursor:pointer;
+			}
+			#btn2{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:navy;
+				cursor:pointer;
+			}
+			#btn3{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:navy;
+				cursor:pointer;
+			}
+			#btn4{
+				width:120px;
+				height:30px;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				line-height:30px;
+				border:2px solid #450095;
+				float:right;
+				color:navy;
+				cursor:pointer;
+			}
+			#btn1:hover{
+				background-color:#64c4DD; /*하늘색*/
+				color:white;
+			}
+			#btn2:hover{
+				background-color:#ffbf3f; /*노란색*/
+				color:white;
+			}
+			#btn3:hover{
+				background-color:#450095; /*남색*/
+				color:white;
+			}
+			#btn4:hover{
+				background-color:#7B2B63;
+				color:white;
+			}
+			#logo{
+            	margin: 20px auto;
+                width: 150px;
+                cursor: pointer;
+            }
+            .list{
+            	width: 480px;
+            	height:60px;
+            	font-size:20px;
+            	fond-weight:bold;
+            	color:navy;
+            	padding:40px;
+            	cursor:pointer;
+            	float:left;
+            	clear:both;
+            }
+            .list:hover{
+            	background-color:#7B2B63;
+            	color:white;
+            }
+            ul{
+            	list-style:none;
+            }
+            a{
+            	color: inherit;
+            	cursor:pointer;
+            	text-decoration:none;
+            }
+            #menu{
+            	margin-top:20px;
+            	display:inline-block;
+            }
+            #menu div{
+            	display:inline-block;
+            }

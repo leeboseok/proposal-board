@@ -23,7 +23,8 @@
                     </div>
                     <div class="right">
                        <a href="signin.jsp">Sign in</a>
-                        <a href="signup.jsp">Sign up</a>
+                       <a href="signup.jsp">Sign up</a>
+                       <a href="admincontact.jsp">CONTACT</a>
                     </div>
                 </div>
                 <div class="bot"></div>

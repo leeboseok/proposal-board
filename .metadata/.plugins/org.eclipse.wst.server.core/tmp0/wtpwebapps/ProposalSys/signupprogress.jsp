@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>void</title>
+		<title>회원가입 처리기</title>
 		<style>
 			#box{
 				border: 5px solid navy;
@@ -60,7 +60,6 @@
 			<%
 				Connection conn=null;
 				Statement stmt=null;
-				ResultSet rs=null;
 				
 				String email=request.getParameter("email");
 				String pw=request.getParameter("pw");
@@ -71,7 +70,6 @@
 				String job=request.getParameter("job");
 				String lo=request.getParameter("location");
 				
-				
 				String url="jdbc:mysql://127.0.0.1:3306/fm_global";
 				String db_id="root";
 				String db_pw="iotiot";
@@ -80,7 +78,7 @@
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					conn=DriverManager.getConnection(url, db_id, db_pw);
 					String sql="insert into member (email, pw, fn, ln, photo, phone, job, location) values(";
-					sql+="'"+email+"','"+pw+"','"+fn+"','"+ln+"','"+"/ProposalSys/images/"+photo+"','"+phone+"','"+job+"','"+lo+"');";
+					sql+="'"+email+"','"+pw+"','"+fn+"','"+ln+"','"+photo+"','"+phone+"','"+job+"','"+lo+"');";
 					stmt=conn.createStatement();
 					stmt.execute(sql);
 					System.out.println(sql);
@@ -90,13 +88,14 @@
 	                out.println("<button><a href='signin.jsp'>로그인 하러 가기</a></button>");
 	                out.println("</div>");
 				}catch(Exception e){
-					out.println("회원가입 실패 : "+e.getMessage());
+					System.out.println("회원가입 실패 : "+e.getMessage());
+					out.println("<h3>Sorry, couldn't success</h3>");
 				}finally{
 					try{
 						if(stmt!=null)stmt.close();
 						if(conn!=null)conn.close();
 					}catch(Exception ex){
-						out.println("접속 해제 중 오류발생 : "+ex.getMessage());
+						System.out.println("접속 해제 중 오류발생 : "+ex.getMessage());
 					}
 				}
 			%>

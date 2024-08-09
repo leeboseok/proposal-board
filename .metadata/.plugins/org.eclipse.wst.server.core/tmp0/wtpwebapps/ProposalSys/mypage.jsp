@@ -15,8 +15,7 @@
 			<h1>MYPAGE</h1>
 			<form id="myList" action="">
 				<div class="personalinfo.jsp">개인정보</div>
-				<div class="mycreations.jsp">내가 쓴 글 보기</div>
-				<div class="messages.jsp">쪽지함</div>
+				<div class="myCreations.jsp">내가 쓴 글 보기</div>
 				<div class="logoutprogress.jsp">로그아웃</div>
 			</form>
 		</div>

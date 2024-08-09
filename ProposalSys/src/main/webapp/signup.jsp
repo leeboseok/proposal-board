@@ -15,21 +15,19 @@
 			<form method="post" action="signupprogress.jsp" name="frm">
                 <div>Email Address</div>
                 <div>
-                	<input type="email" name="email" required>
-                	<input type="hidden" name="reEmail">
-                	<input type="button" value="중복확인" onclick="emailCheck()">
+                	<input type="email" name="email"  placeholder="이메일 주소를 정확히 입력해 주세요." required>
                 </div>
                 <div>Password</div>
-                <div><input type="password" name="pw" required></div>
+                <div><input type="password" name="pw" placeholder="비밀번호를 입력해주세요." required></div>
                 <hr>
                 <div>FirstName</div>
-                <div><input type="text" name="fn" required></div>
+                <div><input type="text" name="fn" placeholder="성을 제외한 이름을 입력해주세요." required></div>
                 <div>LastName</div>
-                <div><input type="text" name="ln" required></div>
+                <div><input type="text" name="ln" placeholder="성만 입력해주세요." required></div>
                 <div>Photo</div>
                 <div><input type="file" name="photo" required></div>
                 <div>Phone</div>
-                <div><input type="text" name="phone" required></div>
+                <div><input type="text" name="phone" placeholder=" ex) 01012341234"required></div>
                 <div>Job</div>
                 <div>
                     <select name="job">
@@ -44,7 +42,7 @@
                         <option value="Executive">Executive</option>
                     </select>
                 </div>
-                <div>Location</div>
+                <div>Branch location</div>
                 <div>
                 	<select name="location">
                         <option value="United States - San Juan">United States - San Juan</option>
@@ -178,17 +176,5 @@
                 </div>
              </form>
         </div>
-        <script>
-	       		function emailCheck(){
-	       			if(document.frm.email.value==""){
-	       				alert("이메일을 입력하세요.");
-	       				document.frm.email.focus();
-	       			}
-	       			var url="emailCheck.do?email="+document.frm.email.value;
-	       			var popupX=(window.screen.width/2) - (450/2);
-	       			var popupY=(window.screen.height/2) - (200/2);
-	       			window.open(url, "_blank_1", "toolbar=no, menubar=no, width=450, height=200, left="+popupX+", top="+popupY);
-	       		}
-	       </script>
 	</body>
 </html>

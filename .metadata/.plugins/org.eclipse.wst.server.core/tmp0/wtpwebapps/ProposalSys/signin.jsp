@@ -25,7 +25,7 @@
 				<a href = "admincontact.jsp">Need help? CONTACT US!</a>
 			</div>
 			<div class="div_a">
-				<a href = "signup.jsp">CREATE ACCOUNT</a>
+				<a href="signup.jsp">Sign up</a>
 			</div>
 		</div>
 	</body>

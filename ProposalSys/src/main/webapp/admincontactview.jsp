@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<h1>User Inquire</h1>
+			<h1>문의사항</h1>
 			<%
 				request.setCharacterEncoding("utf-8");
 					
@@ -45,7 +45,7 @@
 					int totalPages=(int)Math.ceil((double)totalRecords/recordsPerPage);
 					
 				//bs 회원가입 문의사항 리스트 불러오는 쿼리 입니다.
-					String sql="select * from admin_contact order by created_at desc limit ?, ?";
+					String sql="select * from admin_contact order by created_at limit ?, ?";
 					System.out.println(sql);
 					pstmt=conn.prepareStatement(sql);
 					pstmt.setInt(1, start);

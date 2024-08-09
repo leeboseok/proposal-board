@@ -26,7 +26,7 @@
 				stmt=conn.createStatement();
 				stmt.execute(sql);
 				System.out.println(sql);
-				response.sendRedirect("mycreations.jsp");
+				response.sendRedirect("myCreations.jsp");
 			}catch(Exception e){
 				System.out.println("접속 중 오류 발생"+e);
 			}finally{
